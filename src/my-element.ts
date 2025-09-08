@@ -33,16 +33,35 @@ export class MyElement extends LitElement {
       flex-direction: column;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+      background: 
+        radial-gradient(ellipse at top, rgba(255, 255, 255, 0.1) 0%, transparent 70%),
+        linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     }
 
     h1 {
       margin: 0;
-      padding: 20px;
+      padding: 30px 20px 20px;
       color: white;
       text-align: center;
-      font-size: 2em;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      font-size: 2.5em;
+      font-weight: 700;
+      text-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(255, 255, 255, 0.3);
+      letter-spacing: 1px;
+      position: relative;
+    }
+    
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+      border-radius: 2px;
     }
 
     .game-container {
